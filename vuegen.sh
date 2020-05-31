@@ -14,39 +14,38 @@ else
 	cd src
 	mkdir styles
 	cd styles
-	echo @import "../../node_modules/bootstrap/scss/bootstrap"; >> bootstrap.scss
-	echo @import "bootstrap"; >> exports.scss
+	echo "@import \"../../node_modules/bootstrap/scss/bootstrap\";" >> bootstrap.scss
+	echo "@import \"bootstrap\";" >> exports.scss
 	cd ../
-	echo "
-	import Vue from 'vue'
-	import App from './App.vue'
-	import './styles/exports.scss'
+	echo "import Vue from 'vue'
+import App from './App.vue'
+import './styles/exports.scss'
 
-	Vue.config.productionTip = false
+Vue.config.productionTip = false
 
-	new Vue({
-	  render: h => h(App),
-	}).$mount('#app')" >> main.js
+new Vue({
+  render: h => h(App),
+}).\$mount('#app')" > main.js
 	mkdir js
-	echo "
-	<template>
-	  <div id="app">
-	  </div>
-	</template>
+	echo "<template>
+  <div id="app">
+  </div>
+</template>
 
-	<script>
-	export default {
-	  name: 'App'
-	}
-	</script>
+<script>
+export default {
+  name: 'App'
+}
+</script>
 
-	<style>
-	#app {
-	  font-family: Avenir, Helvetica, Arial, sans-serif;
-	  -webkit-font-smoothing: antialiased;
-	  -moz-osx-font-smoothing: grayscale;
-	}
-	</style>" >> vue.js
+<style>
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+</style>" > App.vue
 	cd components
 	rm HelloWorld.vue
+	# add router
 fi
