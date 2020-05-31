@@ -1,1 +1,1 @@
-Framework generators for Angular 2+, React.js, and Vue.js
+Framework generators for Angular 2+, React.js, Vue.js, and a MEAN stack app
